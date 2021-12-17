@@ -83,7 +83,7 @@ class MediaDataFormater
             //json数据字符串化
             output = Newtonsoft.Json.JsonConvert.SerializeObject(ext, Newtonsoft.Json.Formatting.Indented);
             //输出文本
-            File.WriteAllText(Path.GetDirectoryName(Fpath)+ "/ext.json", output);
+            File.WriteAllText(Path.GetDirectoryName(Fpath)+ "/extra.json", output);
         }
         catch
         {
