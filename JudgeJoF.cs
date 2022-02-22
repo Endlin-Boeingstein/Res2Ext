@@ -28,7 +28,7 @@ class JudgeJoF
 			{
 				Console.WriteLine("已检测到为LIBRARY文件夹，请再将resources.json的分解片段拖入窗体，并按回车键");
 				this.Fpath = filepath;
-				ReJudgeJ(Console.ReadLine());
+				ReJudgeJ(Console.ReadLine().Trim('"'));
 			}
 			else
 			{
@@ -50,7 +50,7 @@ class JudgeJoF
 			{
 				Console.WriteLine("已检测到为json文件，请再将LIBRARY文件夹拖入窗体，并按回车键");
 				this.Jpath = filepath;
-				ReJudgeF(Console.ReadLine());
+				ReJudgeF(Console.ReadLine().Trim('"'));
 			}
 			else if (Directory.Exists(filepath))
 			{
@@ -78,14 +78,14 @@ class JudgeJoF
 			{
 				Console.WriteLine("已检测到为json文件，请再将LIBRARY文件夹拖入窗体，并按回车键");
 				this.Jpath = filepath;
-				ReJudgeF(Console.ReadLine());
+				ReJudgeF(Console.ReadLine().Trim('"'));
 				mdf.MediaDataFormat(this.Jpath, this.Fpath);
 			}
 			else if (Directory.Exists(filepath))
 			{
 				Console.WriteLine("已检测到为LIBRARY文件夹，请再将resources.json的分解片段拖入窗体，并按回车键");
 				this.Fpath = filepath;
-				ReJudgeJ(Console.ReadLine());
+				ReJudgeJ(Console.ReadLine().Trim('"'));
 				mdf.MediaDataFormat(this.Jpath, this.Fpath);
 			}
 			else

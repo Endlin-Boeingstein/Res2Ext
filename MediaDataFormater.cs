@@ -76,6 +76,8 @@ class MediaDataFormater
             ext.Property("origin").AddAfterSelf(new JProperty("imgSz", imgSz));
             //建立i元件引用类并修复受损i元件和a元件
             icf.ImageClipFormat(Fpath, Rja, ext);
+            //此功能因画蛇添足而移除//重写资源引用类
+            //此功能因画蛇添足而移除///ext["imgSz"] = icf.ImgSz;
             //在imgSz后增加imgMapper数组
             ext.Property("imgSz").AddAfterSelf(new JProperty("imgMapper", icf.imgMapper));
             //在imgMapper后增加animMapper数组
@@ -83,7 +85,7 @@ class MediaDataFormater
             //json数据字符串化
             output = Newtonsoft.Json.JsonConvert.SerializeObject(ext, Newtonsoft.Json.Formatting.Indented);
             //输出文本
-            File.WriteAllText(Path.GetDirectoryName(Fpath)+ "/ext.json", output);
+            File.WriteAllText(Path.GetDirectoryName(Fpath)+ "/extra.json", output);
         }
         catch
         {
