@@ -13,11 +13,25 @@ class MediaDataFormater
     public Preset ps = new Preset();
     //创建icf实例
     public ImageClipFormater icf = new ImageClipFormater();
+    //创建aco实例
+    public AnimateClipOverwriter aco = new AnimateClipOverwriter();
     //生成资源引用部分
     public void MediaDataFormat(string Jpath, string Fpath)
     {
         try
         {
+            //定义四舍五入默认值
+            double round = 0.64;
+            //询问是否四舍五入
+            Console.WriteLine("是否使用官方位图尺寸?如有四舍五入需求请输入n或0并按回车键（不输入按回车默认执行官方位图尺寸）");
+            //选项收录
+            string s = Console.ReadLine();
+            //判定是否直接回车，输入它值或直接回车则执行
+            if (s == "" || s == "/n/n" || s != "0" || s != "n")
+            {
+                round = 0;
+            }
+            else { }
             //建立imgSz的JSON对象
             JObject imgSz = new JObject();
             //读取文本
@@ -40,12 +54,14 @@ class MediaDataFormater
                     //读取各个切图的id
                     string id = ((JObject)item)["id"].ToString();
                     //读取各个切图的宽度并转换
-                    int width = (int)((int.Parse(((JObject)item)["aw"].ToString())+0.64) * 0.78125);
+                    //新功能更新而停用///int width = (int)((int.Parse(((JObject)item)["aw"].ToString())+0.64) * 0.78125);
+                    int width = (int)((int.Parse(((JObject)item)["aw"].ToString()) + round) * 0.78125);
                     //废弃代码，用了报错
                     ///JObject width = new JObject();
                     ///width.Add(aw);
                     //读取各个切图的高度并转换
-                    int height = (int)((int.Parse(((JObject)item)["ah"].ToString())+0.64) * 0.78125);
+                    //新功能更新而停用///int height = (int)((int.Parse(((JObject)item)["ah"].ToString())+0.64) * 0.78125);
+                    int height = (int)((int.Parse(((JObject)item)["ah"].ToString()) + round) * 0.78125);
                     //废弃代码，用了报错
                     ///JObject height = new JObject();
                     ///height.Add(ah);
@@ -80,8 +96,11 @@ class MediaDataFormater
             //此功能因画蛇添足而移除///ext["imgSz"] = icf.ImgSz;
             //在imgSz后增加imgMapper数组
             ext.Property("imgSz").AddAfterSelf(new JProperty("imgMapper", icf.imgMapper));
+            //重写animMapper数组
+            aco.AnimateClipOverwrite(Path.GetDirectoryName(Fpath) + "/extra.json", icf.acf.animMapper);
             //在imgMapper后增加animMapper数组
-            ext.Property("imgMapper").AddAfterSelf(new JProperty("animMapper", icf.acf.animMapper));
+            //新功能更新而停用///ext.Property("imgMapper").AddAfterSelf(new JProperty("animMapper", icf.acf.animMapper));
+            ext.Property("imgMapper").AddAfterSelf(new JProperty("animMapper", aco.AnimMapper));
             //json数据字符串化
             output = Newtonsoft.Json.JsonConvert.SerializeObject(ext, Newtonsoft.Json.Formatting.Indented);
             //输出文本

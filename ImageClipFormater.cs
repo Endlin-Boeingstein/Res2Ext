@@ -61,6 +61,16 @@ class ImageClipFormater
                     XmlDocument xmlDoc = new XmlDocument();
                     //读取xml
                     xmlDoc.Load(NextFile.FullName);
+                    //判断为SPCUtil解析的元件类型并提示
+                    if (NextFile.Name.Substring(0, 1) == "M" || NextFile.Name.Substring(0, 1) == "A")
+                    {
+                        Console.WriteLine("抱歉，不支持用SPCUtil解析PAM得到的元件");
+                    }
+                    //判断为TwinKles-ToolKit解析的元件类型并提示
+                    if (NextFile.Name.Substring(0, 2) == "sp" || NextFile.Name.Substring(0, 2) == "an")
+                    {
+                        Console.WriteLine("抱歉，不支持用TwinKles-ToolKit解析PAM得到的元件");
+                    }
                     //判定是i元件还是a元件
                     if (NextFile.Name.Substring(0, 1) == "i")
                     {
@@ -370,11 +380,6 @@ class ImageClipFormater
                         xmlDoc.Save(NextFile.FullName);
                         //建立a元件引用类
                         acf.AnimateClipFormat(NextFile.Name);
-                    }
-                    //判断为SPCUtil解析的元件类型并提示
-                    if (NextFile.Name.Substring(0, 1) == "M" || NextFile.Name.Substring(0, 1) == "A")
-                    {
-                        Console.WriteLine("抱歉，不支持用SPCUtil解析PAM得到的元件");
                     }
                     else { }
                 }

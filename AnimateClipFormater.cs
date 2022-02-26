@@ -15,7 +15,7 @@ class AnimateClipFormater
     public void AnimateClipFormat(string FileName)
     {
         //添加a元件切图引用数据
-        animMapper.Add(new JProperty(FileName.Substring(0, FileName.Length - 4), "default_label"));
+        animMapper.Add(new JProperty(FileName.Substring(0, FileName.Length - 4), "default_layer"));
     }
 }
 

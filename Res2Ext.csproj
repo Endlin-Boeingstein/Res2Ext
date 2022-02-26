@@ -47,8 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimateClipFormater.cs" />
+    <Compile Include="AnimateClipOverwriter.cs" />
+    <Compile Include="ClipDecryptor.cs" />
+    <Compile Include="ClipEncryptor.cs" />
+    <Compile Include="DOMDocumentOverwriter.cs" />
     <Compile Include="ImageClipFormater.cs" />
     <Compile Include="JudgeJoF.cs" />
+    <Compile Include="MainClipOverwriter.cs" />
     <Compile Include="MediaDataFormater.cs" />
     <Compile Include="Preset.cs" />
     <Compile Include="Program.cs" />
