@@ -16,6 +16,7 @@ class MainClipOverwriter
     {
         try
         {
+            Console.WriteLine("开始对main元件进行删除全空和全空帧图层以及删除图层末尾空帧......");
             //创建路径文件夹实例
             DirectoryInfo TheFolder = new DirectoryInfo(MPath);
             //创建xml读取对象
@@ -46,7 +47,7 @@ class MainClipOverwriter
                 int dsiexist = 0;
                 foreach (XmlElement element in DOMLayer.ChildNodes)
                 {
-                    if (element.GetElementsByTagName("DOMSymbolInstance").Count != 0)
+                    if (element.GetElementsByTagName("DOMBitmapInstance").Count != 0 || element.GetElementsByTagName("DOMSymbolInstance").Count != 0)
                     {
                         dsiexist = 1;
                     }
@@ -92,7 +93,7 @@ class MainClipOverwriter
                 int dsitrue = 0;
                 foreach (XmlElement element in DOMLayer.FirstChild.ChildNodes)
                 {
-                    if (element.GetElementsByTagName("DOMSymbolInstance").Count != 0)
+                    if (element.GetElementsByTagName("DOMBitmapInstance").Count != 0 || element.GetElementsByTagName("DOMSymbolInstance").Count != 0)
                     {
                         dsitrue = 1;
                     }
@@ -126,7 +127,7 @@ class MainClipOverwriter
                     XmlNode element = node.FirstChild.ChildNodes[i];
                     //转换DOMFrame为XmlElement以便于识别是否存在实帧
                     XmlElement DOMFrame = (XmlElement)element;
-                    if (DOMFrame.GetElementsByTagName("DOMSymbolInstance").Count != 0)
+                    if (DOMFrame.GetElementsByTagName("DOMBitmapInstance").Count != 0 || DOMFrame.GetElementsByTagName("DOMSymbolInstance").Count != 0)
                     {
                         dsitrue = 1;
                     }

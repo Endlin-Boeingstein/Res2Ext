@@ -18,67 +18,78 @@ class ClipDecryptor
     //生成元件解密部分
     public void ClipDecrypt(string Jpath, string Fpath)
     {
-        //创建路径文件夹实例
-        DirectoryInfo TheFolder = new DirectoryInfo(Fpath);
-        //遍历文件夹内文件
-        foreach (FileInfo NextFile in TheFolder.GetFiles())
+        try
         {
-            //流式读取文件类型
-            FileStream stream = new FileStream(NextFile.FullName, FileMode.Open, FileAccess.Read);
-            BinaryReader reader = new BinaryReader(stream);
-            string fileclass = "";
-            try
+            //创建路径文件夹实例
+            DirectoryInfo TheFolder = new DirectoryInfo(Fpath);
+            //遍历文件夹内文件
+            foreach (FileInfo NextFile in TheFolder.GetFiles())
             {
-                for (int i = 0; i < 2; i++)
+                //流式读取文件类型
+                FileStream stream = new FileStream(NextFile.FullName, FileMode.Open, FileAccess.Read);
+                BinaryReader reader = new BinaryReader(stream);
+                string fileclass = "";
+                try
                 {
-                    fileclass += reader.ReadByte().ToString();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            stream.Close();
-            //判定是否为xml
-            if (fileclass == "6068")
-            {
-                //创建xml读取对象
-                XmlDocument xmlDoc = new XmlDocument();
-                //读取xml
-                xmlDoc.Load(NextFile.FullName);
-                //获取根节点root
-                XmlNode root = xmlDoc.DocumentElement;
-                //获取节点layers
-                XmlNode layers = root.FirstChild.FirstChild.FirstChild;
-                //获取layers图层列表
-                XmlNodeList layersnodeList = layers.ChildNodes;
-                //预置加密图层删除列表
-                List<XmlNode> LayersToRemove = new List<XmlNode>();
-                //收录加密图层
-                foreach (XmlNode node in layersnodeList)
-                {
-                    //转换DOMLayer为XmlElement以便于识别是否存在加密层
-                    XmlElement DOMLayer = (XmlElement)node;
-                    if (DOMLayer.GetAttribute("name") == "encrypt_layer")
+                    for (int i = 0; i < 2; i++)
                     {
-                        LayersToRemove.Add(node);
-                        continue;
+                        fileclass += reader.ReadByte().ToString();
                     }
-                    else { }
                 }
-                //根据删除列表删除加密图层
-                foreach (XmlNode node in LayersToRemove)
+                catch (Exception)
                 {
-                    node.ParentNode.RemoveChild(node);
-                    //保存xml
-                    xmlDoc.Save(NextFile.FullName);
+                    throw;
                 }
+                stream.Close();
+                //判定是否为xml
+                if (fileclass == "6068")
+                {
+                    //创建xml读取对象
+                    XmlDocument xmlDoc = new XmlDocument();
+                    //读取xml
+                    xmlDoc.Load(NextFile.FullName);
+                    //获取根节点root
+                    XmlNode root = xmlDoc.DocumentElement;
+                    //获取节点layers
+                    XmlNode layers = root.FirstChild.FirstChild.FirstChild;
+                    //获取layers图层列表
+                    XmlNodeList layersnodeList = layers.ChildNodes;
+                    //预置加密图层删除列表
+                    List<XmlNode> LayersToRemove = new List<XmlNode>();
+                    //收录加密图层
+                    foreach (XmlNode node in layersnodeList)
+                    {
+                        //转换DOMLayer为XmlElement以便于识别是否存在加密层
+                        XmlElement DOMLayer = (XmlElement)node;
+                        if (DOMLayer.GetAttribute("name") == "encrypt_layer")
+                        {
+                            LayersToRemove.Add(node);
+                            continue;
+                        }
+                        else { }
+                    }
+                    //根据删除列表删除加密图层
+                    foreach (XmlNode node in LayersToRemove)
+                    {
+                        node.ParentNode.RemoveChild(node);
+                        //保存xml
+                        xmlDoc.Save(NextFile.FullName);
+                    }
+                }
+                else { }
             }
-            else { }
+            //解密后重新生成extra.json
+            Console.WriteLine("解密完成，需重新生成extra.json");
+            mdfl.MediaDataFormat(Jpath, Fpath);
+            mcol.MainClipOverwrite(Fpath + "\\main.xml");
         }
-        //解密后重新生成extra.json
-        Console.WriteLine("解密完成，需重新生成extra.json");
-        mdfl.MediaDataFormat(Jpath, Fpath);
-        mcol.MainClipOverwrite(Fpath + "\\main.xml");
+        catch
+        {
+            Console.WriteLine("ClipDecrypt ERROR");
+            //提示按任意键继续
+            Console.WriteLine("Press any key to continue...");
+            //输入任意键退出
+            Console.ReadLine();
+        }
     }
 }

@@ -117,12 +117,12 @@ class ClipEncryptor
                     DOMLayer.PrependChild(frames);
 
                     //判断为SPCUtil解析的元件类型并提示
-                    if (NextFile.Name.Substring(0, 1) == "M" || NextFile.Name.Substring(0, 1) == "A")
+                    if (NextFile.Name.Substring(0, 1) == "M" || NextFile.Name.Substring(0, 1) == "A" || NextFile.Name.Substring(0, NextFile.Name.Length - 4) == "A_Main")
                     {
                         Console.WriteLine("抱歉，不支持用SPCUtil解析PAM得到的元件");
                     }
                     //判断为TwinKles-ToolKit解析的元件类型并提示
-                    if (NextFile.Name.Substring(0, 2) == "sp" || NextFile.Name.Substring(0, 2) == "an")
+                    if (NextFile.Name.Substring(0, 2) == "sp" || NextFile.Name.Substring(0, 2) == "an" || NextFile.Name.Substring(0, NextFile.Name.Length - 4) == "main_animation")
                     {
                         Console.WriteLine("抱歉，不支持用TwinKles-ToolKit解析PAM得到的元件");
                     }

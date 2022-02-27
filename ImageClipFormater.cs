@@ -62,12 +62,12 @@ class ImageClipFormater
                     //读取xml
                     xmlDoc.Load(NextFile.FullName);
                     //判断为SPCUtil解析的元件类型并提示
-                    if (NextFile.Name.Substring(0, 1) == "M" || NextFile.Name.Substring(0, 1) == "A")
+                    if (NextFile.Name.Substring(0, 1) == "M" || NextFile.Name.Substring(0, 1) == "A" || NextFile.Name.Substring(0, NextFile.Name.Length - 4) == "A_Main")
                     {
                         Console.WriteLine("抱歉，不支持用SPCUtil解析PAM得到的元件");
                     }
                     //判断为TwinKles-ToolKit解析的元件类型并提示
-                    if (NextFile.Name.Substring(0, 2) == "sp" || NextFile.Name.Substring(0, 2) == "an")
+                    if (NextFile.Name.Substring(0, 2) == "sp" || NextFile.Name.Substring(0, 2) == "an" || NextFile.Name.Substring(0, NextFile.Name.Length - 4) == "main_animation")
                     {
                         Console.WriteLine("抱歉，不支持用TwinKles-ToolKit解析PAM得到的元件");
                     }
@@ -86,6 +86,16 @@ class ImageClipFormater
                         matrix.PrependChild(Matrix);
                         //新功能更新而停用//移除matrix的xmlns属性
                         //新功能更新而停用///matrix.RemoveAttribute("xmlns");
+                        //检测是否存在i元件引用元件以及i元件引用多个位图的情况
+                        if (xmlDoc.GetElementsByTagName("DOMBitmapInstance").Count > 1)
+                        {
+                            Console.WriteLine(NextFile.Name.Substring(0, NextFile.Name.Length - 4) + "元件引用多个位图，将会引发错误");
+                        }
+                        if (xmlDoc.GetElementsByTagName("DOMSymbolInstance").Count != 0)
+                        {
+                            Console.WriteLine(NextFile.Name.Substring(0, NextFile.Name.Length - 4) + "元件引用元件，将会引发错误");
+                        }
+                        else { }
                         //读取DOMBitmapInstance节点
                         //新功能更新而停用，用了报错///XmlElement element = (XmlElement)xmlDoc.SelectSingleNode("DOMSymbolItem/timeline/DOMTimeline/layers/DOMLayer/frames/DOMFrame/elements/DOMBitmapInstance");
                         XmlElement element = (XmlElement)xmlDoc.GetElementsByTagName("DOMBitmapInstance")[0];
@@ -244,7 +254,7 @@ class ImageClipFormater
                             //此功能因画蛇添足而移除///ImgSz = imgSz;
                             //保存xml
                             xmlDoc.Save(NextFile.FullName);
-                        } 
+                        }
                     }
                     //判断为a元件并修复
                     if (NextFile.Name.Substring(0, 1) == "a")
@@ -259,6 +269,12 @@ class ImageClipFormater
                         Matrix.SetAttribute("d", "1.000000");
                         //将Matrix作为matrix的子节点
                         matrix.PrependChild(Matrix);
+                        //检测是否存在a元件引用位图的情况
+                        if (xmlDoc.GetElementsByTagName("DOMBitmapInstance").Count != 0)
+                        {
+                            Console.WriteLine(NextFile.Name.Substring(0, NextFile.Name.Length - 4) + "元件引用位图，将会引发错误");
+                        }
+                        else { }
                         //读取节点DOMSymbolInstance
                         XmlElement delement = (XmlElement)xmlDoc.GetElementsByTagName("DOMSymbolInstance")[0];
                         //判断该a元件是否引用元件
@@ -311,7 +327,59 @@ class ImageClipFormater
                                 }
                                 else { }
                             }
-                            
+
+                            //检测是否一个图层读取多个元件
+                            //获取根节点root
+                            XmlNode root = xmlDoc.DocumentElement;
+                            //获取节点layers
+                            XmlNode layers = root.FirstChild.FirstChild.FirstChild;
+                            //获取layers图层列表
+                            XmlNodeList layersnodeList = layers.ChildNodes;
+                            //检测引用位图的图层和帧数
+                            foreach (XmlNode node in layersnodeList)
+                            {
+                                //转换DOMLayer为XmlElement以便于识别是否存在位图引用
+                                XmlElement DOMLayer = (XmlElement)node;
+                                //判断是否存在DOMSymbolInstance，以判定是否引用多元件
+                                foreach (XmlElement DOMFrame in DOMLayer.FirstChild.ChildNodes)
+                                {
+                                    if (DOMFrame.GetElementsByTagName("DOMSymbolInstance").Count != 0)
+                                    {
+                                        //定义第一个元件名称以判定是否同图层每帧存在异元件
+                                        string lname = ((XmlElement)DOMLayer.GetElementsByTagName("DOMSymbolInstance")[0]).GetAttribute("libraryItemName");
+
+                                        if (DOMFrame.GetElementsByTagName("DOMSymbolInstance").Count != 1)
+                                        {
+                                            Console.WriteLine(NextFile.Name.Substring(0, NextFile.Name.Length - 4) + "元件引用多个元件，将会引发错误");
+                                        }
+                                        else
+                                        {
+                                            //判定同图层是否每帧不同元件
+                                            if (((XmlElement)DOMFrame.GetElementsByTagName("DOMSymbolInstance")[0]).GetAttribute("libraryItemName") != lname)
+                                            {
+                                                //预置图层名
+                                                string bname = DOMLayer.GetAttribute("name");
+                                                //预置帧数
+                                                int bindex = int.Parse(DOMFrame.GetAttribute("index"));
+                                                //预置长度
+                                                int bduration;
+                                                if (DOMFrame.GetAttribute("duration") == null || DOMFrame.GetAttribute("duration") == "")
+                                                {
+                                                    bduration = 1;
+                                                }
+                                                else
+                                                {
+                                                    bduration = int.Parse(DOMFrame.GetAttribute("duration"));
+                                                }
+                                                Console.WriteLine(NextFile.Name.Substring(0, NextFile.Name.Length - 4) + "元件图层" + bname + "第" + bindex + "帧（在Adobe Animate中为第" + (bindex + 1) + "帧）引用不同种元件，长度" + bduration + "帧，将会引发错误");
+                                            }
+                                            else { }
+                                        }
+                                    }
+                                    else { }
+                                }
+                            }
+
                             //读取DOMSymbolInstance节点，检查a元件matrix是否为空或为0
                             foreach (XmlElement el in xmlDoc.GetElementsByTagName("DOMSymbolInstance"))
                             {
@@ -380,6 +448,87 @@ class ImageClipFormater
                         xmlDoc.Save(NextFile.FullName);
                         //建立a元件引用类
                         acf.AnimateClipFormat(NextFile.Name);
+                    }
+                    //判断为main元件并检测是否存在引用位图情况
+                    if (NextFile.Name.Substring(0, NextFile.Name.Length - 4) == "main")
+                    {
+                        //检测是否存在引用位图的情况
+                        if (xmlDoc.GetElementsByTagName("DOMBitmapInstance").Count == 0) { }
+                        else
+                        {
+                            //获取根节点root
+                            XmlNode root = xmlDoc.DocumentElement;
+                            //获取节点layers
+                            XmlNode layers = root.FirstChild.FirstChild.FirstChild;
+                            //获取layers图层列表
+                            XmlNodeList layersnodeList = layers.ChildNodes;
+                            //检测引用位图的图层和帧数
+                            foreach (XmlNode node in layersnodeList)
+                            {
+                                //转换DOMLayer为XmlElement以便于识别是否存在位图引用
+                                XmlElement DOMLayer = (XmlElement)node;
+                                //判断是否存在DOMSymbolInstance，以判定是否引用位图和引用多元件
+                                foreach (XmlElement DOMFrame in DOMLayer.FirstChild.ChildNodes)
+                                {
+                                    //位图检测
+                                    if (DOMFrame.GetElementsByTagName("DOMBitmapInstance").Count != 0)
+                                    {
+                                        //预置图层名
+                                        string bname = DOMLayer.GetAttribute("name");
+                                        //预置帧数
+                                        int bindex = int.Parse(DOMFrame.GetAttribute("index"));
+                                        //预置长度
+                                        int bduration;
+                                        if (DOMFrame.GetAttribute("duration") == null || DOMFrame.GetAttribute("duration") == "")
+                                        {
+                                            bduration = 1;
+                                        }
+                                        else
+                                        {
+                                            bduration = int.Parse(DOMFrame.GetAttribute("duration"));
+                                        }
+                                        Console.WriteLine("main元件图层"+bname+"第"+bindex+"帧（在Adobe Animate中为第"+(bindex+1)+"帧）引用位图，长度"+ bduration + "帧，将会引发错误");
+                                    }
+                                    else { }
+
+                                    //元件检测
+                                    if (DOMFrame.GetElementsByTagName("DOMSymbolInstance").Count != 0)
+                                    {
+                                        //定义第一个元件名称以判定是否同图层每帧存在异元件
+                                        string lname = ((XmlElement)DOMLayer.GetElementsByTagName("DOMSymbolInstance")[0]).GetAttribute("libraryItemName");
+
+                                        //预置图层名
+                                        string bname = DOMLayer.GetAttribute("name");
+                                        //预置帧数
+                                        int bindex = int.Parse(DOMFrame.GetAttribute("index"));
+                                        //预置长度
+                                        int bduration;
+                                        if (DOMFrame.GetAttribute("duration") == null || DOMFrame.GetAttribute("duration") == "")
+                                        {
+                                            bduration = 1;
+                                        }
+                                        else
+                                        {
+                                            bduration = int.Parse(DOMFrame.GetAttribute("duration"));
+                                        }
+                                        if (DOMFrame.GetElementsByTagName("DOMSymbolInstance").Count != 1)
+                                        {
+                                            Console.WriteLine("main元件图层" + bname + "第" + bindex + "帧（在Adobe Animate中为第" + (bindex + 1) + "帧）引用多元件，长度" + bduration + "帧，将会引发错误");
+                                        }
+                                        else
+                                        {
+                                            //判定同图层是否每帧不同元件
+                                            if (((XmlElement)DOMFrame.GetElementsByTagName("DOMSymbolInstance")[0]).GetAttribute("libraryItemName") != lname)
+                                            {
+                                                Console.WriteLine("main元件图层" + bname + "第" + bindex + "帧（在Adobe Animate中为第" + (bindex + 1) + "帧）引用不同种元件，长度" + bduration + "帧，将会引发错误");
+                                            }
+                                            else { }
+                                        }
+                                    }
+                                    else { }
+                                }
+                            }
+                        }
                     }
                     else { }
                 }

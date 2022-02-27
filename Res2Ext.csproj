@@ -55,6 +55,7 @@
     <Compile Include="JudgeJoF.cs" />
     <Compile Include="MainClipOverwriter.cs" />
     <Compile Include="MediaDataFormater.cs" />
+    <Compile Include="OtherClipOverwriter.cs" />
     <Compile Include="Preset.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

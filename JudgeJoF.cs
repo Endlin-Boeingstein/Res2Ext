@@ -18,6 +18,8 @@ class JudgeJoF
 	public DOMDocumentOverwriter ddo = new DOMDocumentOverwriter();
 	//创建mco实例
 	public MainClipOverwriter mco = new MainClipOverwriter();
+	//创建oco实例
+	public OtherClipOverwriter oco = new OtherClipOverwriter();
 	//创建ce实例
 	public ClipEncryptor ce = new ClipEncryptor();
 	//判断第二个路径是否为json文件
@@ -88,6 +90,7 @@ class JudgeJoF
 				mdf.MediaDataFormat(this.Jpath, this.Fpath + "\\LIBRARY");
 				ddo.DOMDocumentOverwrite(this.Fpath + "\\DOMDocument.xml");
 				mco.MainClipOverwrite(this.Fpath + "\\LIBRARY\\main.xml");
+				oco.OtherClipOverwrite(this.Fpath + "\\LIBRARY");
 				ce.ClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY");
 			}
 			else if (Directory.Exists(filepath))
@@ -98,6 +101,7 @@ class JudgeJoF
 				mdf.MediaDataFormat(this.Jpath, this.Fpath + "\\LIBRARY");
 				ddo.DOMDocumentOverwrite(this.Fpath + "\\DOMDocument.xml");
 				mco.MainClipOverwrite(this.Fpath + "\\LIBRARY\\main.xml");
+				oco.OtherClipOverwrite(this.Fpath + "\\LIBRARY");
 				ce.ClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY");
 			}
 			else
