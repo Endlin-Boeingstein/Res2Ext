@@ -22,6 +22,8 @@ class JudgeJoF
 	public OtherClipOverwriter oco = new OtherClipOverwriter();
 	//创建ce实例
 	public ClipEncryptor ce = new ClipEncryptor();
+	//创建ecc实例20240317添加
+	public EncryptClipCreator ecc = new EncryptClipCreator();
 	//判断第二个路径是否为json文件
 	public void ReJudgeJ(string filepath)
     {
@@ -34,9 +36,18 @@ class JudgeJoF
 			}
 			else if (Directory.Exists(filepath))
 			{
-				Console.WriteLine("已检测到为xfl文件夹，请再将resources.json的分解片段拖入窗体，并按回车键");
-				this.Fpath = filepath;
-				ReJudgeJ(Console.ReadLine().Trim('"'));
+                DirectoryInfo TheFolder = new DirectoryInfo(filepath);
+				if (TheFolder.Name.EndsWith(".xfl"))
+				{
+                    Console.WriteLine("已检测到为xfl文件夹，请再将resources.json的分解片段或分解文件夹拖入窗体，并按回车键");
+                    this.Fpath = filepath;
+                    ReJudgeJ(Console.ReadLine().Trim('"'));
+                }
+				else
+				{
+                    Console.WriteLine("已检测到为资源文件分解文件夹");
+                    this.Jpath = filepath;
+                }
 			}
 			else
 			{
@@ -62,8 +73,18 @@ class JudgeJoF
 			}
 			else if (Directory.Exists(filepath))
 			{
-				Console.WriteLine("已检测到为xfl文件夹");
-				this.Fpath = filepath;
+				DirectoryInfo TheFolder = new DirectoryInfo(filepath);
+				if (TheFolder.Name.EndsWith(".xfl"))
+				{
+                    Console.WriteLine("已检测到为xfl文件夹");
+                    this.Fpath = filepath;
+                }
+				else
+				{
+                    Console.WriteLine("已检测到为资源文件分解文件夹，请再将xfl文件夹拖入窗体，并按回车键");
+                    this.Jpath = filepath;
+                    ReJudgeF(Console.ReadLine().Trim('"'));
+                }
 			}
 			else
 			{
@@ -87,22 +108,52 @@ class JudgeJoF
 				Console.WriteLine("已检测到为json文件，请再将xfl文件夹拖入窗体，并按回车键");
 				this.Jpath = filepath;
 				ReJudgeF(Console.ReadLine().Trim('"'));
-				mdf.MediaDataFormat(this.Jpath, this.Fpath + "\\LIBRARY");
+                //加密元件创制20240317添加
+                ecc.EncryptClipCreate(this.Fpath + "\\LIBRARY", this.Fpath + "\\DOMDocument.xml");
+                mdf.MediaDataFormat(this.Jpath, this.Fpath + "\\LIBRARY");
 				ddo.DOMDocumentOverwrite(this.Fpath + "\\DOMDocument.xml");
 				mco.MainClipOverwrite(this.Fpath + "\\LIBRARY\\main.xml");
 				oco.OtherClipOverwrite(this.Fpath + "\\LIBRARY");
-				ce.ClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY");
-			}
+                //加密元件插入20240319添加
+                ce.SpecialClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", ecc.ic.icname);
+                ce.SpecialClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", ecc.ac.acname);
+                ce.ClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", this.Fpath + "\\DOMDocument.xml");
+            }
 			else if (Directory.Exists(filepath))
 			{
-				Console.WriteLine("已检测到为xfl文件夹，请再将resources.json的分解片段拖入窗体，并按回车键");
-				this.Fpath = filepath;
-				ReJudgeJ(Console.ReadLine().Trim('"'));
-				mdf.MediaDataFormat(this.Jpath, this.Fpath + "\\LIBRARY");
-				ddo.DOMDocumentOverwrite(this.Fpath + "\\DOMDocument.xml");
-				mco.MainClipOverwrite(this.Fpath + "\\LIBRARY\\main.xml");
-				oco.OtherClipOverwrite(this.Fpath + "\\LIBRARY");
-				ce.ClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY");
+                DirectoryInfo TheFolder = new DirectoryInfo(filepath);
+				if (TheFolder.Name.EndsWith(".xfl"))
+				{
+                    Console.WriteLine("已检测到为xfl文件夹，请再将resources.json的分解片段或分解文件夹拖入窗体，并按回车键");
+                    this.Fpath = filepath;
+                    ReJudgeJ(Console.ReadLine().Trim('"'));
+                    //加密元件创制20240317添加
+                    ecc.EncryptClipCreate(this.Fpath + "\\LIBRARY", this.Fpath + "\\DOMDocument.xml");
+                    mdf.MediaDataFormat(this.Jpath, this.Fpath + "\\LIBRARY");
+                    ddo.DOMDocumentOverwrite(this.Fpath + "\\DOMDocument.xml");
+                    mco.MainClipOverwrite(this.Fpath + "\\LIBRARY\\main.xml");
+                    oco.OtherClipOverwrite(this.Fpath + "\\LIBRARY");
+                    //加密元件插入20240319添加
+                    ce.SpecialClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", ecc.ic.icname);
+                    ce.SpecialClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", ecc.ac.acname);
+                    ce.ClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", this.Fpath + "\\DOMDocument.xml");
+                }
+				else
+				{
+                    Console.WriteLine("已检测到为资源文件分解文件夹，请再将xfl文件夹拖入窗体，并按回车键");
+                    this.Jpath = filepath;
+                    ReJudgeF(Console.ReadLine().Trim('"'));
+                    //加密元件创制20240317添加
+                    ecc.EncryptClipCreate(this.Fpath + "\\LIBRARY", this.Fpath + "\\DOMDocument.xml");
+                    mdf.MediaDataFormat(this.Jpath, this.Fpath + "\\LIBRARY");
+                    ddo.DOMDocumentOverwrite(this.Fpath + "\\DOMDocument.xml");
+                    mco.MainClipOverwrite(this.Fpath + "\\LIBRARY\\main.xml");
+                    oco.OtherClipOverwrite(this.Fpath + "\\LIBRARY");
+                    //加密元件插入20240319添加
+                    ce.SpecialClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", ecc.ic.icname);
+                    ce.SpecialClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", ecc.ac.acname);
+                    ce.ClipEncrypt(this.Jpath, this.Fpath + "\\LIBRARY", this.Fpath + "\\DOMDocument.xml");
+                }
 			}
 			else
 			{
@@ -112,7 +163,6 @@ class JudgeJoF
 		catch
 		{
 			Console.WriteLine("ERROR");
-
 		}
 
 	}
