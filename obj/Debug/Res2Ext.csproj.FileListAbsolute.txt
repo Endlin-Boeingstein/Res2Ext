@@ -5,7 +5,6 @@ E:\Documents\Visual Studio 2019\source\repos\Res2Ext\bin\Debug\Newtonsoft.Json.d
 E:\Documents\Visual Studio 2019\source\repos\Res2Ext\bin\Debug\Newtonsoft.Json.xml
 E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.AssemblyReference.cache
 E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.CoreCompileInputs.cache
-E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.CopyComplete
 E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.exe
 E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.pdb
-E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.SuggestedBindingRedirects.cache
+E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.Up2Date
