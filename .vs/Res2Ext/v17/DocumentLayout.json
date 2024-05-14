@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\mainclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|e:\\documents\\visual studio 2019\\source\\repos\\res2ext\\mainclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:mainclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:otherclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|e:\\documents\\visual studio 2019\\source\\repos\\res2ext\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -46,8 +46,7 @@
               "RelativeToolTip": "OtherClipOverwriter.cs",
               "ViewState": "AQIAAH8AAAAAAAAAAAAgwIYAAABqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T13:31:47.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T13:31:47.601Z"
             },
             {
               "$type": "Document",
@@ -57,7 +56,7 @@
               "RelativeDocumentMoniker": "MainClipOverwriter.cs",
               "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MainClipOverwriter.cs",
               "RelativeToolTip": "MainClipOverwriter.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAAAHQAAABiAAAA",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAHQAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T14:35:56.386Z",
               "EditorCaption": ""
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAQwBoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T10:25:22.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-28T10:25:22.411Z"
             }
           ]
         }
