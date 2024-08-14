@@ -311,7 +311,7 @@ class MainClipOverwriter
         }
         catch
         {
-            Console.WriteLine("ImageClipFormat ERROR");
+            Console.WriteLine("MainClipOverwrite ERROR");
             //提示按任意键继续
             Console.WriteLine("Press any key to continue...");
             //输入任意键退出

@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|e:\\documents\\visual studio 2019\\source\\repos\\res2ext\\imageclipformater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:imageclipformater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:mainclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\otherclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:otherclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|e:\\documents\\visual studio 2019\\source\\repos\\res2ext\\preset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:preset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,44 +38,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ImageClipFormater.cs",
-              "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\ImageClipFormater.cs",
-              "RelativeDocumentMoniker": "ImageClipFormater.cs",
-              "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\ImageClipFormater.cs",
-              "RelativeToolTip": "ImageClipFormater.cs",
-              "ViewState": "AQIAAJIAAAAAAAAAAAAiwJ4AAACKAAAA",
+              "DocumentIndex": 2,
+              "Title": "Preset.cs",
+              "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Preset.cs",
+              "RelativeDocumentMoniker": "Preset.cs",
+              "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Preset.cs",
+              "RelativeToolTip": "Preset.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T08:14:56.352Z",
+              "WhenOpened": "2024-08-14T12:06:05.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OtherClipOverwriter.cs",
-              "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\OtherClipOverwriter.cs",
-              "RelativeDocumentMoniker": "OtherClipOverwriter.cs",
-              "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\OtherClipOverwriter.cs",
-              "RelativeToolTip": "OtherClipOverwriter.cs",
-              "ViewState": "AQIAANUBAAAAAAAAAAAQwNwBAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T13:31:47.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainClipOverwriter.cs",
               "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MainClipOverwriter.cs",
               "RelativeDocumentMoniker": "MainClipOverwriter.cs",
               "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MainClipOverwriter.cs",
               "RelativeToolTip": "MainClipOverwriter.cs",
-              "ViewState": "AQIAADEBAAAAAAAAAAAswGMAAAAYAAAA",
+              "ViewState": "AQIAADMBAAAAAAAAAAAQwDkBAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T14:35:56.386Z"
+              "WhenOpened": "2024-05-12T14:35:56.386Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
