@@ -8,3 +8,13 @@ E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.Co
 E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.exe
 E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.pdb
 E:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.Up2Date
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\bin\Debug\Res2Ext.exe.config
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\bin\Debug\Res2Ext.exe
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\bin\Debug\Res2Ext.pdb
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\bin\Debug\Newtonsoft.Json.dll
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\bin\Debug\Newtonsoft.Json.xml
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.AssemblyReference.cache
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.CoreCompileInputs.cache
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.csproj.Up2Date
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.exe
+F:\Documents\Visual Studio 2019\source\repos\Res2Ext\obj\Debug\Res2Ext.pdb

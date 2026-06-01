@@ -1,21 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\",
+  "WorkspaceRootPath": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|e:\\documents\\visual studio 2019\\source\\repos\\res2ext\\mediadataformater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:mediadataformater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\mainclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\otherclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:otherclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|f:\\documents\\visual studio 2019\\source\\repos\\res2ext\\mainclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:mainclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\preset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\animateclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:animateclipoverwriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\mediadataformater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:mediadataformater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\preset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064D91EF-3EDC-46C4-9EE3-7D4C43414115}|Res2Ext.csproj|solutionrelative:preset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,28 +46,70 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MediaDataFormater.cs",
-              "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MediaDataFormater.cs",
-              "RelativeDocumentMoniker": "MediaDataFormater.cs",
-              "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MediaDataFormater.cs",
-              "RelativeToolTip": "MediaDataFormater.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAApwDAAAABVAAAA",
+              "DocumentIndex": 1,
+              "Title": "OtherClipOverwriter.cs",
+              "DocumentMoniker": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\OtherClipOverwriter.cs",
+              "RelativeDocumentMoniker": "OtherClipOverwriter.cs",
+              "ToolTip": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\OtherClipOverwriter.cs",
+              "RelativeToolTip": "OtherClipOverwriter.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAABcAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T04:38:03.548Z",
+              "WhenOpened": "2026-05-28T04:02:25.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AnimateClipOverwriter.cs",
+              "DocumentMoniker": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\AnimateClipOverwriter.cs",
+              "RelativeDocumentMoniker": "AnimateClipOverwriter.cs",
+              "ToolTip": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\AnimateClipOverwriter.cs",
+              "RelativeToolTip": "AnimateClipOverwriter.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAAE8AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-27T05:06:26.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwBMAAACBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T10:25:22.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainClipOverwriter.cs",
+              "DocumentMoniker": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MainClipOverwriter.cs",
+              "RelativeDocumentMoniker": "MainClipOverwriter.cs",
+              "ToolTip": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MainClipOverwriter.cs",
+              "RelativeToolTip": "MainClipOverwriter.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAABkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T14:35:56.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Preset.cs",
-              "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Preset.cs",
+              "DocumentMoniker": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Preset.cs",
               "RelativeDocumentMoniker": "Preset.cs",
-              "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Preset.cs",
+              "ToolTip": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Preset.cs",
               "RelativeToolTip": "Preset.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -67,28 +117,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainClipOverwriter.cs",
-              "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MainClipOverwriter.cs",
-              "RelativeDocumentMoniker": "MainClipOverwriter.cs",
-              "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MainClipOverwriter.cs",
-              "RelativeToolTip": "MainClipOverwriter.cs",
-              "ViewState": "AQIAADMBAAAAAAAAAAAQwDkBAAAwAAAA",
+              "DocumentIndex": 4,
+              "Title": "MediaDataFormater.cs",
+              "DocumentMoniker": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MediaDataFormater.cs",
+              "RelativeDocumentMoniker": "MediaDataFormater.cs",
+              "ToolTip": "F:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\MediaDataFormater.cs",
+              "RelativeToolTip": "MediaDataFormater.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAApwDAAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T14:35:56.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\Documents\\Visual Studio 2019\\source\\repos\\Res2Ext\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwBoAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T10:25:22.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-22T04:38:03.548Z"
             }
           ]
         }
